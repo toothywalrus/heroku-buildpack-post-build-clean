@@ -17,7 +17,7 @@ if [[ ! -f "${CLEAN_FILES}" ]]; then
   exit 1
 fi
 
-while read file; do
+while read -r file || [[ -n "$file" ]]; do
   [[ ! -n "${file}" ]] && continue
 
   if [[ -f "${file}" ]]; then
